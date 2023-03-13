@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var coordinator: RootCoordinator? {
+        didSet {
+            self.coordinator?.trigger(to: .chatList)
+        }
+    }
+
 // MARK: - Methods
 
     func application(
@@ -36,13 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
 
-        let rootViewController = UINavigationController(
-            rootViewController: ChatListConfigurator.build()
-        )
+        let coordinator = RootCoordinator()
 
-        window.rootViewController = rootViewController
+        window.rootViewController = coordinator.router.rootViewController
         window.makeKeyAndVisible()
 
         self.window = window
+        self.coordinator = coordinator
     }
 }
