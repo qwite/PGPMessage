@@ -32,9 +32,23 @@ final class ChatListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _chatListView.setupViews()
+        setupViews()
 
         self.presenter.viewIsReady()
+    }
+
+// MARK: - Private Methods
+
+    private func setupViews() {
+        _chatListView.setupViews()
+
+        self.title = Title.chats
+    }
+
+// MARK: - Constants
+
+    private enum Title {
+        static let chats = "Chats"
     }
 
 // MARK: - Variables
