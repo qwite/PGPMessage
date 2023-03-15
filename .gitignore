@@ -62,9 +62,6 @@ DerivedData/
 *.xcodeproj
 *.xcworkspace
 
-# Tuist binary files
-.tuist-bin/
-
 ### Tuist derived files ###
 graph.dot
 Derived/
