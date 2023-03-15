@@ -1,0 +1,1 @@
+.tuist-bin/tuist generate
