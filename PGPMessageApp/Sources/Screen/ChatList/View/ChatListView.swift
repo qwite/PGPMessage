@@ -11,11 +11,11 @@ import UIKit
 
 // ----------------------------------------------------------------------------
 
-class ChatListView: UIView {
+final class ChatListView: UIView {
 
 // MARK: - Methods
 
     func setupViews() {
-        self.backgroundColor = .yellow
+        self.backgroundColor = .white
     }
 }
