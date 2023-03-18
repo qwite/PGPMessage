@@ -28,7 +28,7 @@ final class RootCoordinator: BaseCoordinator<RootRoute> {
 
             case .chatList:
                 let chatListViewController = ChatListConfigurator.build()
-                router.push(chatListViewController, asRoot: true)
+                router.pushAsRoot(chatListViewController)
         }
     }
 }

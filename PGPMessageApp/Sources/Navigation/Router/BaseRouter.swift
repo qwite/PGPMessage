@@ -37,24 +37,23 @@ class BaseRouter: Routable {
         _navigationController.popViewController(animated: true)
     }
 
+    func popTo(_ viewController: UIViewController) {
+        _navigationController.popToViewController(viewController, animated: true)
+    }
+
     func present(_ viewController: UIViewController) {
         _navigationController.present(viewController, animated: true)
     }
 
-    func push(_ viewController: UIViewController, asRoot: Bool) {
-
-        if asRoot {
-            pushAsRoot(viewController); return
-        }
-
+    func push(_ viewController: UIViewController) {
         _navigationController.pushViewController(viewController, animated: true)
     }
 
-// MARK: - Private Methods
-
-    private func pushAsRoot(_ viewController: UIViewController) {
-        _navigationController.viewControllers = [viewController]
+    func pushAsRoot(_ viewController: UIViewController) {
+        _navigationController.setViewControllers([viewController], animated: true)
     }
+
+// MARK: - Private Methods
 
     private func clearNavigationStack() {
         _navigationController.viewControllers = []

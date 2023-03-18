@@ -23,18 +23,11 @@ protocol Routable {
 
     func pop()
 
+    func popTo(_ viewController: UIViewController)
+
     func present(_ viewController: UIViewController)
 
-    func push(_ viewController: UIViewController, asRoot: Bool)
-}
+    func push(_ viewController: UIViewController)
 
-// ----------------------------------------------------------------------------
-
-extension Routable {
-
-// MARK: - Methods
-
-    func push(_ viewController: UIViewController, asRoot: Bool = false) {
-        push(viewController, asRoot: asRoot)
-    }
+    func pushAsRoot(_ viewController: UIViewController)
 }

@@ -36,7 +36,7 @@ let project = Project(
             platform: .iOS,
             product: .unitTests,
             bundleId: "ru.lashmanov.PGPMessageAppTests",
-            infoPlist: "Resources/PGPMessage-Info.plist",
+            infoPlist: .default,
             sources: ["Tests/**"],
             dependencies: [
                 .target(name: "PGPMessageApp"),
