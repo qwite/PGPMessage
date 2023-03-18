@@ -50,4 +50,3 @@ internal final class MockNavigationController: UINavigationController {
 
     private var _navigationStack: [UIViewController] = []
 }
-

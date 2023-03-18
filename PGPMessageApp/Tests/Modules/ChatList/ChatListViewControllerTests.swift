@@ -13,7 +13,7 @@ import XCTest
 
 // ----------------------------------------------------------------------------
 
-final class ChatListViewControllerTests: XCTestCase {
+internal final class ChatListViewControllerTests: XCTestCase {
 
 // MARK: Properties
 
@@ -47,4 +47,3 @@ final class ChatListViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.view.backgroundColor, UIColor.white)
     }
 }
-
