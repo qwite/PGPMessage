@@ -11,7 +11,7 @@ let project = Project(
             product: .app,
             bundleId: "ru.lashmanov.PGPMessage",
             deploymentTarget: .iOS(targetVersion: "13.0", devices: .iphone),
-            infoPlist: "Resources/PGPMessage-Info.plist",
+            infoPlist: .default,
             sources: [
                 "Sources/**"
             ],
