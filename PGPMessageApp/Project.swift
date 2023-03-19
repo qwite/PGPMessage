@@ -2,6 +2,14 @@ import ProjectDescription
 
 // MARK: - Project
 
+let infoPlist: [String: InfoPlist.Value] = [
+    "UILaunchStoryboardName": .string("LaunchScreen.storyboard"),
+    "UIApplicationSceneManifest": .dictionary([
+        "UIApplicationSupportsMultipleScenes": .boolean(false),
+        "UISceneConfigurations": .dictionary([:])
+    ])
+]
+
 let project = Project(
     name: "PGPMessageApp",
     targets: [
@@ -11,7 +19,7 @@ let project = Project(
             product: .app,
             bundleId: "ru.lashmanov.PGPMessage",
             deploymentTarget: .iOS(targetVersion: "13.0", devices: .iphone),
-            infoPlist: .default,
+            infoPlist: .extendingDefault(with: infoPlist),
             sources: [
                 "Sources/**"
             ],
