@@ -40,12 +40,28 @@ final class ChatListViewController: UIViewController {
 // MARK: - Private Methods
 
     private func setupViews() {
-        _chatListView.setupViews()
 
         self.title = Title.chats
+
+        _chatListView.setupViews()
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        let tableView = _chatListView.tableView
+
+        tableView.register(ChatListCell.self)
+        tableView.delegate = self
+        tableView.dataSource = tableView.createDiffableDataSource()
+
+        tableView.rowHeight = Dimension.tableViewRowHeight
     }
 
 // MARK: - Constants
+
+    private enum Dimension {
+        static let tableViewRowHeight: CGFloat = 44.0
+    }
 
     private enum Title {
         static let chats = "Chats"
@@ -62,4 +78,17 @@ final class ChatListViewController: UIViewController {
 
 extension ChatListViewController: ChatListViewProtocol {
     // Do nothing
+}
+
+// ----------------------------------------------------------------------------
+// MARK: - @protocol UITableViewDelegate
+// ----------------------------------------------------------------------------
+
+extension ChatListViewController: UITableViewDelegate {
+
+// MARK: - Methods
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
