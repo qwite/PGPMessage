@@ -21,10 +21,13 @@ let project = Project(
             deploymentTarget: .iOS(targetVersion: "13.0", devices: .iphone),
             infoPlist: .extendingDefault(with: infoPlist),
             sources: [
-                "Sources/**"
+                "Sources/**",
             ],
             resources: [
-                "Resources/**"
+                "Resources/**",
+            ],
+            dependencies: [
+                .external(name: "Flow"),
             ],
             settings: .settings(
                 configurations: [
