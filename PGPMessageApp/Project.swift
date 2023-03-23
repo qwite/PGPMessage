@@ -22,12 +22,14 @@ let project = Project(
             infoPlist: .extendingDefault(with: infoPlist),
             sources: [
                 "Sources/**",
+                "Dependencies/**",
             ],
             resources: [
                 "Resources/**",
             ],
             dependencies: [
                 .external(name: "Flow"),
+                .project(target: "PGPMessageCore", path: "../PGPMessageCore"),
             ],
             settings: .settings(
                 configurations: [
