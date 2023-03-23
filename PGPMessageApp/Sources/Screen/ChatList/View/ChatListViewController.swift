@@ -12,7 +12,10 @@ import UIKit
 // ----------------------------------------------------------------------------
 
 protocol ChatListViewProtocol: AnyObject {
-    // Do nothing
+
+// MARK: - Methods
+
+    func updateChatListData(_ viewModel: [ChatListViewModel])
 }
 
 // ----------------------------------------------------------------------------
@@ -77,7 +80,12 @@ final class ChatListViewController: UIViewController {
 // ----------------------------------------------------------------------------
 
 extension ChatListViewController: ChatListViewProtocol {
-    // Do nothing
+
+// MARK: - Methods
+
+    func updateChatListData(_ viewModel: [ChatListViewModel]) {
+        _chatListView.tableView.createSnapshot(with: viewModel)
+    }
 }
 
 // ----------------------------------------------------------------------------

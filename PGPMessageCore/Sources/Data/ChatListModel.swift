@@ -7,11 +7,17 @@
 //
 // ----------------------------------------------------------------------------
 
-struct ChatListModel: Hashable {
+//import Foundation
+
+// ----------------------------------------------------------------------------
+
+public struct ChatListModel: Codable {
 
 // MARK: - Properties
 
-    let senderName: String
+//    public let senderDate: Data
 
-    let message: String
+    public let senderName: String
+
+    public let messageText: String
 }

@@ -1,0 +1,18 @@
+[
+    {
+        "senderName": "Anton",
+        "messageText": "Hey, dude!"
+    },
+    {
+        "senderName": "Max",
+        "messageText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus porttitor enim, vitae scelerisque risus fermentum sed. Maecenas blandit rutrum dolor, sit amet ornare nisl. Quisque venenatis dui vitae erat mollis maximus. Duis cursus massa id auctor malesuada. Duis nec dui quis nisi pellentesque sodales. Suspendisse quis massa commodo, ornare nibh nec, fermentum nisi. Sed arcu neque, ullamcorper sit amet vestibulum nec, commodo in nisi. Pellentesque aliquet eu quam eu egestas."
+    },
+    {
+        "senderName": "Anton",
+        "messageText": "Nulla facilisi. Nunc in nisi lacinia, dictum libero in, pulvinar turpis. Curabitur cursus dignissim metus id dignissim. Ut purus tellus, imperdiet ac eleifend sit amet, bibendum ac nunc. Nullam ipsum dolor, tincidunt at dictum eu, dignissim ut urna. Sed gravida dui vehicula, cursus lorem at, fermentum quam. Aenean ultricies, sapien ut aliquet imperdiet, eros eros dignissim mauris, non auctor odio metus sed sem. Suspendisse ut blandit augue. In massa ex, eleifend sagittis purus eget, molestie elementum orci. Nulla est ligula, imperdiet quis molestie eget, ornare quis tellus. Aenean non vehicula sapien, nec posuere eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "senderName": "Anton",
+        "messageText": "In id suscipit purus, et vestibulum mauris. Ut sed massa dignissim, sollicitudin diam quis, iaculis eros. Aenean pharetra non dui in molestie. Aenean eget augue libero. Nunc arcu ligula, malesuada id arcu ac, sodales fermentum libero. Proin maximus mi mauris, sit amet vestibulum magna posuere a. Donec tristique mi et justo pulvinar pellentesque. Morbi id interdum orci. Sed tristique sem eleifend semper efficitur. Vestibulum accumsan tellus nulla. Sed ultrices eros id pulvinar posuere. Nulla sed justo eget orci tincidunt tempor. Phasellus fermentum felis eget felis posuere tempor."
+    },
+]
