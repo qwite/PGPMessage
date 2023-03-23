@@ -7,7 +7,7 @@
 //
 // ----------------------------------------------------------------------------
 
-struct ChatListModel: Hashable {
+struct ChatListViewModel: Hashable {
 
 // MARK: - Properties
 

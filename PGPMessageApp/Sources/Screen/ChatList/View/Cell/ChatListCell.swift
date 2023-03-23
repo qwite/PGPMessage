@@ -79,5 +79,5 @@ final class ChatListCell:
 
 // MARK: - Inner Types
 
-    typealias ProvidedItem = ChatListModel
+    typealias ProvidedItem = ChatListViewModel
 }
