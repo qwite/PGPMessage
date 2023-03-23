@@ -7,6 +7,10 @@
 //
 // ----------------------------------------------------------------------------
 
+import PGPMessageCore
+
+// ----------------------------------------------------------------------------
+
 protocol ChatListPresenterProtocol: AnyObject {
 
 // MARK: - Methods
@@ -24,6 +28,21 @@ final class ChatListPresenter {
         _view = view
     }
 
+// MARK: - Private Methods
+
+    func loadChatListData() {
+        let chatListProvider = ChatListProvider()
+
+        guard let chatListData = chatListProvider.data else {
+            return
+        }
+
+        let chatListViewModel: [ChatListViewModel] = chatListData
+            .map { $0.toViewModel() }
+
+        _view?.updateChatListData(chatListViewModel)
+    }
+
 // MARK: - Properties
 
     private weak var _view: ChatListViewProtocol?
@@ -38,6 +57,6 @@ extension ChatListPresenter: ChatListPresenterProtocol {
 // MARK: - Methods
 
     func viewIsReady() {
-        // Do nothing
+        loadChatListData()
     }
 }
