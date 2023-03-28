@@ -7,6 +7,7 @@
 //
 // ----------------------------------------------------------------------------
 
+import PGPMessageDesignSystem
 import SnapKit
 import UIKit
 
@@ -21,8 +22,8 @@ final class ChatListCell:
     let avatarView: UIView = {
         let avatarView = UIView()
 
-        avatarView.layer.borderWidth = Dimension.avatarViewLayerBorderWidth
         avatarView.layer.borderColor = UIColor.black.cgColor
+        avatarView.layer.borderWidth = Dimension.avatarViewLayerBorderWidth
         avatarView.layer.cornerRadius = Dimension.avatarViewLayerCornerRadius
 
         return avatarView
@@ -31,7 +32,7 @@ final class ChatListCell:
     let senderNameLabel: UILabel = {
         let senderNameLabel = UILabel()
 
-        senderNameLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
+        senderNameLabel.font = Font.caption
 
         return senderNameLabel
     }()
@@ -39,7 +40,7 @@ final class ChatListCell:
     let messageLabel: UILabel = {
         let messageLabel = UILabel()
 
-        messageLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
+        messageLabel.font = Font.caption
 
         return messageLabel
     }()

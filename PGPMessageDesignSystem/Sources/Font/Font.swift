@@ -7,6 +7,11 @@
 //
 // ----------------------------------------------------------------------------
 
+import UIKit
+
+// ----------------------------------------------------------------------------
+
 public enum Font {
-    // Do nothing
+    public static let headline = UIFont.preferredFont(forTextStyle: .headline)
+    public static let caption = UIFont.preferredFont(forTextStyle: .caption1)
 }
