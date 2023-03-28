@@ -15,11 +15,11 @@ extension UITableViewCell {
 
 // MARK: - Properties
 
-    static var reuseIdentifier: String {
+    public static var reuseIdentifier: String {
         String(describing: self)
     }
 
-    var reuseIdentifier: String {
+    public var reuseIdentifier: String {
         type(of: self).reuseIdentifier
     }
 }
