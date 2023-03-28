@@ -12,12 +12,12 @@ import UIKit
 
 // ----------------------------------------------------------------------------
 
-final class DiffableTableView<C: UITableViewCell & Providable>:
+public final class DiffableTableView<C: UITableViewCell & Providable>:
     UITableView {
 
 // MARK: - Methods
 
-    func createDiffableDataSource() -> DiffableDataSource {
+    public func createDiffableDataSource() -> DiffableDataSource {
 
         let diffableDataSource = DiffableDataSource(tableView: self, cellProvider: cellProvider)
         _diffableDataSource = diffableDataSource
@@ -25,7 +25,7 @@ final class DiffableTableView<C: UITableViewCell & Providable>:
         return diffableDataSource
     }
 
-    func createSnapshot(with items: [Item]) {
+    public func createSnapshot(with items: [Item]) {
 
         let snapshot = NSDiffableDataSourceSnapshot<Section, Item>().then {
             $0.appendSections([.main])
@@ -35,7 +35,7 @@ final class DiffableTableView<C: UITableViewCell & Providable>:
         _diffableDataSource?.apply(snapshot)
     }
 
-    func appendItem(_ item: Item) {
+    public func appendItem(_ item: Item) {
 
         let snapshot = _diffableDataSource?.snapshot().then {
             $0.appendItems([item])
@@ -66,12 +66,12 @@ final class DiffableTableView<C: UITableViewCell & Providable>:
 
 // MARK: - Inner Types
 
-    enum Section: Hashable {
+    public enum Section: Hashable {
         case main
     }
 
-    typealias DiffableDataSource = UITableViewDiffableDataSource<Section, Item>
-    typealias Item = C.ProvidedItem
+    public typealias DiffableDataSource = UITableViewDiffableDataSource<Section, Item>
+    public typealias Item = C.ProvidedItem
 
 // MARK: - Variables
 

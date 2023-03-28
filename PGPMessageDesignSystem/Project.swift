@@ -18,6 +18,9 @@ let project = Project(
             resources: [
                 "Resources/**",
             ],
+            dependencies: [
+                .external(name: "Flow"),
+            ],
             settings: .settings(
                 configurations: [
                     .debug(

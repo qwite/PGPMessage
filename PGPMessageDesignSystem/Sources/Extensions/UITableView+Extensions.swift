@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 //
-//  UITableViewCell+Extensions.swift
+//  UITableView+Extensions.swift
 //
 //  @author     Artem Lashmanov <https://github.com/qwite>
 //  @copyright  Copyright (c) 2023
@@ -11,15 +11,11 @@ import UIKit
 
 // ----------------------------------------------------------------------------
 
-extension UITableViewCell {
+extension UITableView {
 
-// MARK: - Properties
+// MARK: - Methods
 
-    static var reuseIdentifier: String {
-        String(describing: self)
-    }
-
-    var reuseIdentifier: String {
-        type(of: self).reuseIdentifier
+    public func register<C: UITableViewCell>(_ cell: C.Type) {
+        register(C.self, forCellReuseIdentifier: cell.reuseIdentifier)
     }
 }
