@@ -7,6 +7,7 @@
 //
 // ----------------------------------------------------------------------------
 
+import SnapKit
 import UIKit
 
 // ----------------------------------------------------------------------------
@@ -20,11 +21,10 @@ final class ChatListCell:
     let avatarView: UIView = {
         let avatarView = UIView()
 
-        avatarView.layer.borderWidth = 1.0
+        avatarView.layer.borderWidth = Dimension.avatarViewLayerBorderWidth
         avatarView.layer.borderColor = UIColor.black.cgColor
-        avatarView.layer.cornerRadius = 8.0
+        avatarView.layer.cornerRadius = Dimension.avatarViewLayerCornerRadius
 
-        avatarView.translatesAutoresizingMaskIntoConstraints = false
         return avatarView
     }()
 
@@ -33,7 +33,6 @@ final class ChatListCell:
 
         senderNameLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
 
-        senderNameLabel.translatesAutoresizingMaskIntoConstraints = false
         return senderNameLabel
     }()
 
@@ -42,7 +41,6 @@ final class ChatListCell:
 
         messageLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
 
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
         return messageLabel
     }()
 
@@ -58,23 +56,52 @@ final class ChatListCell:
 // MARK: - Private Methods
 
     private func setupViews() {
+        setupAvatarView()
+        setupLabels()
+    }
 
+    private func setupAvatarView() {
         self.addSubview(self.avatarView)
+
+        self.avatarView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(Dimension.avatarViewTop)
+            $0.leading.equalToSuperview().offset(Dimension.avatarViewLeading)
+            $0.bottom.equalToSuperview().inset(Dimension.avatarViewBottom)
+            $0.width.equalTo(Dimension.avatarViewWidth)
+        }
+    }
+
+    private func setupLabels() {
         self.addSubview(self.senderNameLabel)
-        self.addSubview(self.messageLabel)
 
-        NSLayoutConstraint.activate([
-            self.avatarView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2.0),
-            self.avatarView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8.0),
-            self.avatarView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2.0),
-            self.avatarView.widthAnchor.constraint(equalToConstant: 44.0),
+        self.senderNameLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(Dimension.senderNameLabelTop)
+            $0.leading.equalTo(self.avatarView.snp.trailing).offset(Dimension.senderNameLabelLeading)
+        }
 
-            self.senderNameLabel.leadingAnchor.constraint(equalTo: self.avatarView.trailingAnchor, constant: 8.0),
-            self.senderNameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 8.0),
+        self.addSubview(messageLabel)
 
-            self.messageLabel.topAnchor.constraint(equalTo: self.senderNameLabel.bottomAnchor, constant: 4.0),
-            self.messageLabel.leadingAnchor.constraint(equalTo: self.senderNameLabel.leadingAnchor),
-        ])
+        self.messageLabel.snp.makeConstraints {
+            $0.top.equalTo(self.senderNameLabel.snp.bottom).offset(Dimension.messageLabelTop)
+            $0.leading.equalTo(self.senderNameLabel.snp.leading)
+        }
+    }
+
+// MARK: - Constants
+
+    private enum Dimension {
+        static let avatarViewLayerBorderWidth: CGFloat = 1.0
+        static let avatarViewLayerCornerRadius: CGFloat = 8.0
+
+        static let avatarViewTop: CGFloat = 8.0
+        static let avatarViewLeading: CGFloat = 2.0
+        static let avatarViewBottom: CGFloat = 2.0
+        static let avatarViewWidth: CGFloat = 44.0
+
+        static let senderNameLabelTop: CGFloat = 8.0
+        static let senderNameLabelLeading: CGFloat = 8.0
+
+        static let messageLabelTop: CGFloat = 4.0
     }
 
 // MARK: - Inner Types
