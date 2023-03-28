@@ -29,6 +29,7 @@ let project = Project(
             ],
             dependencies: [
                 .external(name: "Flow"),
+                .external(name: "SnapKit"),
                 .project(target: "PGPMessageCore", path: "../PGPMessageCore"),
             ],
             settings: .settings(
