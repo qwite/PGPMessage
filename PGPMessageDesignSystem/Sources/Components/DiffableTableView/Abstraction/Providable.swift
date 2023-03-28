@@ -7,7 +7,7 @@
 //
 // ----------------------------------------------------------------------------
 
-protocol Providable {
+public protocol Providable {
 
     associatedtype ProvidedItem: Hashable
 

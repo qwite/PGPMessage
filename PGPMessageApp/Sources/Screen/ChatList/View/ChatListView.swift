@@ -7,6 +7,7 @@
 //
 // ----------------------------------------------------------------------------
 
+import PGPMessageDesignSystem
 import UIKit
 
 // ----------------------------------------------------------------------------
@@ -17,7 +18,6 @@ final class ChatListView: UIView {
 
     init() {
         self.tableView = DiffableTableView<ChatListCell>()
-
         super.init(frame: .zero)
     }
 
@@ -40,7 +40,7 @@ final class ChatListView: UIView {
     }
 
     func setupViews() {
-        self.backgroundColor = .white
+        self.backgroundColor = Color.light
 
         self.addSubview(tableView)
     }
